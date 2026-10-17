@@ -80,25 +80,20 @@ httpClient.interceptors.request.use(
             withCredentials: true,
           });
           csrfToken = Cookies.get("XSRF-TOKEN");
-
-          if (!csrfToken) {
-            throw new Error("Failed to retrieve CSRF token from cookies");
-          }
         } catch (error) {
-          // Ignore 404 errors (endpoint might not be available) and continue
-          if (error.response && error.response.status === 404) {
-            console.warn(
-              "[CSRF Token] Endpoint not found (404), continuing without CSRF token"
-            );
-          } else {
-            console.error("[CSRF Token Error]", error);
-            return Promise.reject(error);
-          }
+          // Non-fatal: the backend may have CSRF disabled (e.g. a cross-domain
+          // deployment that authenticates with JWT Bearer tokens). Continue
+          // without a CSRF token rather than failing the request.
+          console.warn(
+            "[CSRF Token] Could not obtain CSRF token, continuing without it"
+          );
         }
       }
 
-      // Add CSRF token to request header
-      config.headers["X-XSRF-TOKEN"] = csrfToken;
+      // Attach the CSRF token only if one is available
+      if (csrfToken) {
+        config.headers["X-XSRF-TOKEN"] = csrfToken;
+      }
     }
 
     return config;
