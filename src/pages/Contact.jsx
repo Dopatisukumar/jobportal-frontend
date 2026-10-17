@@ -6,7 +6,7 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    userType: "jobseeker",
+    userType: "Job Seeker",
     subject: "",
     message: "",
   });
@@ -18,9 +18,9 @@ const Contact = () => {
   const navigate = useNavigate();
 
   const userTypes = [
-    { value: "jobseeker", label: "Job Seeker" },
-    { value: "employer", label: "Employer" },
-    { value: "other", label: "Other" },
+    { value: "Job Seeker", label: "Job Seeker" },
+    { value: "Employer", label: "Employer" },
+    { value: "Other", label: "Other" },
   ];
 
   const subjectOptions = [
@@ -99,7 +99,7 @@ const Contact = () => {
       setFormData({
         name: "",
         email: "",
-        userType: "jobseeker",
+        userType: "Job Seeker",
         subject: "",
         message: "",
       });
