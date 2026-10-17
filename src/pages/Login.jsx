@@ -58,20 +58,20 @@ const Login = () => {
   const fillDemoCredentials = (type) => {
     if (type === "employer") {
       setFormData({
-        email: "sanjana@gmail.com",
-        password: "EazyBytes@1803",
+        email: "sudheer@gmail.com",
+        password: "JobPortal@123",
         userType: "employer",
       });
     } else if (type === "admin") {
       setFormData({
-        email: "admin@gmail.com",
-        password: "EazyBytes@1803",
+        email: "supriya@gmail.com",
+        password: "JobPortal@123",
         userType: "admin",
       });
     } else {
       setFormData({
-        email: "john@gmail.com",
-        password: "EazyBytes@1803",
+        email: "sukumar@gmail.com",
+        password: "JobPortal@123",
         userType: "jobSeeker",
       });
     }
@@ -154,9 +154,11 @@ const Login = () => {
                         : "bg-white border border-gray-200 hover:bg-gray-50"
                     } rounded-lg transition-colors text-sm`}
                   >
-                    <div className="font-medium text-purple-700">Employer</div>
+                    <div className="font-medium text-purple-700">
+                      Employer (Sudheer)
+                    </div>
                     <div className="text-gray-500">
-                      sanjana@gmail.com / EazyBytes@1803
+                      sudheer@gmail.com / JobPortal@123
                     </div>
                   </button>
                   <button
@@ -168,9 +170,11 @@ const Login = () => {
                         : "bg-white border border-gray-200 hover:bg-gray-50"
                     } rounded-lg transition-colors text-sm`}
                   >
-                    <div className="font-medium text-blue-700">Job Seeker</div>
+                    <div className="font-medium text-blue-700">
+                      Job Seeker (Sukumar)
+                    </div>
                     <div className="text-gray-500">
-                      john@gmail.com / EazyBytes@1803
+                      sukumar@gmail.com / JobPortal@123
                     </div>
                   </button>
                   <button
@@ -182,9 +186,11 @@ const Login = () => {
                         : "bg-white border border-gray-200 hover:bg-gray-50"
                     } rounded-lg transition-colors text-sm`}
                   >
-                    <div className="font-medium text-blue-700">Admin</div>
+                    <div className="font-medium text-blue-700">
+                      Admin (Supriya)
+                    </div>
                     <div className="text-gray-500">
-                      admin@gmail.com / EazyBytes@1803
+                      supriya@gmail.com / JobPortal@123
                     </div>
                   </button>
                 </div>
